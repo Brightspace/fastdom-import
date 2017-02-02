@@ -245,10 +245,6 @@ function mixin(target, source) {
 
 // There should never be more than
 // one instance of `FastDom` in an app
-var exports = win.fastdom = (win.fastdom || new FastDom()); // jshint ignore:line
-
-// Expose to CJS & AMD
-if ((typeof define)[0] == 'f') define(function() { return exports; });
-else if ((typeof module)[0] == 'o') module.exports = exports;
+win.fastdom = (win.fastdom || new FastDom()); // jshint ignore:line
 
 })( typeof window !== 'undefined' ? window : this);
